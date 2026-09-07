@@ -27,15 +27,30 @@ public class Inventario{
 	// Ciclo while para listar opciones con menu en switch
 
 
-	while (){
+	while (opciones != 4){
 
 		System.out.println("\nGracias Por Usar Nuestro Sistema de Invetarios\n");
 		System.out.println("\nCordial Saludo;\n");
-		System.out.println("\nPor Favor Seleccione una opcion ingresando un numero del 1 al 5 segun sea su solicitud:\n");
-		System.out.println("\n\n1. Listar Productos Disponibles.\n");
+		System.out.println("\n\nPor Favor Seleccione una opcion ingresando un numero del 1 al 5:\n\n");
+		System.out.println("\n1. Listar Productos Disponibles.\n");
 		System.out.println("\n2. Buscar Productos Disponibles. \n");
 		System.out.println("\n3. Agregar Productos.\n");
-		System.out.println("\n4. Salir\n");
+		System.out.println("\n4. Salir.\n");
+		System.out.println("\n\nPor Favor Seleccione una opcion ingresando un numero del 1 al 5:\n\n");
+
+		opciones = reader.nextInt();
+		reader.nextLine(); // Permite limpiar la memoria interna del scanner; "refresh".
+
+		switch (opciones){
+		
+			case 1:
+				System.out.println("\nProductos Disponibles:\n");
+
+		}
+
+
+
+
 	}
 
 
@@ -46,6 +61,15 @@ public class Inventario{
 
 	// Funcion para buscar el producto:
 
+	public static boolean encontrarProducto(String[] cookies, String buscarNombre){
 
+		for (String cookie : cookies){
+			if (cookie != null && cookie.equals(buscarNombre)){
+				return true;
+			}
+		}
+
+		return false;
+	}
 
 }
