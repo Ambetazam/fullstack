@@ -46,9 +46,40 @@ public class Inventario{
 			case 1:
 				System.out.println("\nProductos Disponibles:\n");
 
+				for (cookie : cookies){
+					if (cookie != null){
+						System.out.println("\n" + cookie);
+					}
+				}
+
+				break;
+
+
+			case 2:
+
+				System.out.println("\nPor favor escriba el nombre del producto que desea buscar:\n");
+				String buscarProducto = reader.nextline();
+				boolean disponible = encontrarProducto(cookies, buscarProducto);
+				if (disponible){
+					System.out.println("\nProducto Disponible.\n");
+				}else{
+					System.out.println("\nEl Producto solicitado no esta disponible.\n");
+				}
+				break;
+
+
+			case 3:
+
+			case 4:
+
+			default:
+				System.out.println("\nOpcion no permitida!\n");
+
+
+
 		}
 
-
+	reader.close();
 
 
 	}
@@ -61,10 +92,10 @@ public class Inventario{
 
 	// Funcion para buscar el producto:
 
-	public static boolean encontrarProducto(String[] cookies, String buscarNombre){
+	public static boolean encontrarProducto(String[] cookies, String buscarProducto){
 
 		for (String cookie : cookies){
-			if (cookie != null && cookie.equals(buscarNombre)){
+			if (cookie != null && cookie.equalsIgnoreCase(buscarProducto)){
 				return true;
 			}
 		}
