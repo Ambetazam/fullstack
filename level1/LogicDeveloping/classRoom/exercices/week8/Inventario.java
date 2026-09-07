@@ -15,11 +15,36 @@ public class Inventario{
 	cookies[2]= "Tosh";
 	cookies[3]= null;
 	cookies[4]= null;
+	
+	int opciones = 0;
+
+
+	// Ciclo for: para agregar los campos en null
+	for(int i = 2; i < cookies.length; i++){
+
+	}
+
+	// Ciclo while para listar opciones con menu en switch
+
+
+	while (){
+
+		System.out.println("\nGracias Por Usar Nuestro Sistema de Invetarios\n");
+		System.out.println("\nCordial Saludo;\n");
+		System.out.println("\nPor Favor Seleccione una opcion ingresando un numero del 1 al 5 segun sea su solicitud:\n");
+		System.out.println("\n\n1. Listar Productos Disponibles.\n");
+		System.out.println("\n2. Buscar Productos Disponibles. \n");
+		System.out.println("\n3. Agregar Productos.\n");
+		System.out.println("\n4. Salir\n");
+	}
+
+
+
 
 
 	}
 
-
+	// Funcion para buscar el producto:
 
 
 
