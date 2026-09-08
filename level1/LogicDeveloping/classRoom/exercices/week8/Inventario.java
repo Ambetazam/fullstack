@@ -7,87 +7,89 @@ public class Inventario{
 	// 1. Declaracion del scanner en el main 'it allows me to run the scanner and callit whetever place'.
 
 	Scanner reader = new Scanner(System.in);
-	
+	System.out.println("Gracias por ingresar al Sistema de Inventarios de Galletas Noel Grupo Nutresa.");
 	// 2. Declaracion de un array de 5 campos.
-	String[] cookies = new String[4];
+	String[] cookies = new String[5];
 	cookies[0]= "Ducales";
 	cookies[1]= "Festival";
 	cookies[2]= "Tosh";
-	cookies[3]= null;
-	cookies[4]= null;
-	
+
 	int opciones = 0;
-
-
-	// Ciclo for: para agregar los campos en null
-	for(int i = 2; i < cookies.length; i++){
-
-	}
-
-	// Ciclo while para listar opciones con menu en switch
 
 
 	while (opciones != 4){
 
-		System.out.println("\nGracias Por Usar Nuestro Sistema de Invetarios\n");
-		System.out.println("\nCordial Saludo;\n");
-		System.out.println("\n\nPor Favor Seleccione una opcion ingresando un numero del 1 al 5:\n\n");
-		System.out.println("\n1. Listar Productos Disponibles.\n");
-		System.out.println("\n2. Buscar Productos Disponibles. \n");
-		System.out.println("\n3. Agregar Productos.\n");
-		System.out.println("\n4. Salir.\n");
-		System.out.println("\n\nPor Favor Seleccione una opcion ingresando un numero del 1 al 5:\n\n");
+		System.out.println("Por Favor Seleccione una opcion ingresando un numero del 1 al 5:");
+		System.out.println("1. Listar Productos Disponibles.");
+		System.out.println("2. Buscar Productos Disponibles.");
+		System.out.println("3. Agregar Productos.");
+		System.out.println("4. Salir.");
 
 		opciones = reader.nextInt();
 		reader.nextLine(); // Permite limpiar la memoria interna del scanner; "refresh".
 
 		switch (opciones){
-		
+
 			case 1:
 				System.out.println("\nProductos Disponibles:\n");
 
-				for (cookie : cookies){
+				for (String cookie : cookies){
 					if (cookie != null){
-						System.out.println("\n" + cookie);
+						System.out.println("***" + cookie);
 					}
 				}
 
-				break;
+			break;
 
 
 			case 2:
 
-				System.out.println("\nPor favor escriba el nombre del producto que desea buscar:\n");
-				String buscarProducto = reader.nextline();
+				System.out.println("Por favor escriba el nombre del producto que desea buscar:");
+				String buscarProducto = reader.nextLine();
+
 				boolean disponible = encontrarProducto(cookies, buscarProducto);
+
 				if (disponible){
 					System.out.println("\nProducto Disponible.\n");
 				}else{
-					System.out.println("\nEl Producto solicitado no esta disponible.\n");
+					System.out.println("\nEl Producto " + buscarProducto +  " solicitado no esta disponible.\n");
 				}
-				break;
+
+			break;
 
 
 			case 3:
 
-			case 4:
+				System.out.println("\nIngrese el nombre del nuevo producto:\n");
+				String nuevoProducto = reader.nextLine();
 
+				boolean productoAgregado = false;
+
+				for (int i = 0; i < cookies.length; i++){
+					if (cookies[i] == null){
+						cookies[i] = nuevoProducto;
+						productoAgregado = true;
+						System.out.println("\nEl Producto: " + nuevoProducto + " Ha sido agregado al inventario.\n");
+						break;
+					}
+				}
+
+				if (!productoAgregado){
+					System.out.println("\nNo se pueden agregar mas productos al inventario.\n");
+				}
+			break;
+
+			case 4:
+				System.out.println("\nGracias por usar nuestros servicios...\n");
+				System.out.println("\nHasta pronto!\n");
+			break;
+		
 			default:
 				System.out.println("\nOpcion no permitida!\n");
 
-
-
 		}
-
-	reader.close();
-
-
 	}
-
-
-
-
-
+	reader.close();
 	}
 
 	// Funcion para buscar el producto:
@@ -103,4 +105,4 @@ public class Inventario{
 		return false;
 	}
 
-}
+} 
