@@ -1,0 +1,17 @@
+A CI/CD pipeline is an automated assembly line that builds, tests,
+and delivers software code changes from a developer's laptop to
+YouTube · TechWorld w... +2
+production users .
+Key Stages of a CI/CD Pipeline
+• Source Stage: A developer pushes code to a shared repository like GitHub, which
+automatically triggers the pipeline.
+• Build Stage: The system compiles code and packages dependencies or container
+images using tools like Docker.
+• Test Stage: Automated unit and integration tests check the code for bugs and
+security vulnerabilities.
+• Release/Deploy Stage: Approved builds move to staging or production
+CircleCI +3
+environments via CircleCI or GitLab.
+
+
+
