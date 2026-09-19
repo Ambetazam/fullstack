@@ -1,0 +1,14 @@
+*{background-color: blue;}
+
+body{height: 80px; width: 100px}
+
+.u_left-top{background-color: white; top: 0; left: 0; z-index: -1;}
+.u_left-bottom{background-color: white; bottom: 0; left: 0; z-index: -1}
+.u_rigth-top{background-color: white; top: 0; rigth: 0; z-index: -1}
+.u_rigth-bottom{background-color: white; bottom: 0; rigth: 0; z-index: -1}
+
+
+.o_left-top{background-color: red; top: 0; left: 0; z-index: 1;}
+.o_left-bottom{background-color:red; bottom: 0; left: 0; z-index: 1}
+.o_right-top{background-color:red; top: 0; rigth: 0; z-index: 1}
+.o_right-top{background-color:red; top: 0; rigth: 0; z-index: 1}
