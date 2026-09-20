@@ -1,11 +1,15 @@
-let user_one;
-let password_user_one;
-let user_input;
-let password_input;
+const user_one = normalUser;
+const password_user_one = simple1234;
+
+let initMessage = "Wellcome to our system!\nPlease Insert your user and password:\n";
+let user_input = prompt('Insert your User:\n');
+let password_input = prompt('Insert your Password');
 
 let wrong = 2;
 
-function attemps(){
+attemps = true;
+
+function attemps(user_one,password_user_one){
 	while ( wrong < 0 && user_one != user_input && password_user_one != password_input) {
 		console.log(`Incorrect User or Password:\nPlease try again\n${wrong} attemps left!`);
 		wrong = wrong - wrong;
