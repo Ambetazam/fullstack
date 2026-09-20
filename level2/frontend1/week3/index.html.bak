@@ -8,7 +8,7 @@
 <body>
 	<h1>Frontend LEVEL 1</h1>
 	<p>Login Java Script Assessment Exercice.</p>
-	<script src="/assessment/login-corrected-003.js"></script>
+	<script src="/assessment/login.js"></script>
 
 </body>
 </html>
