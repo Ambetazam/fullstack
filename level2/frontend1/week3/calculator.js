@@ -1,3 +1,5 @@
+import  from="./functions.js";
+
 const EXIT = 'pass_key';
 
 let word;
