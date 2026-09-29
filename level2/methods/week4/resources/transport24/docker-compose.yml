@@ -1,0 +1,34 @@
+services:
+  db:
+    image: postgres:17-alpine
+    container_name: transport24-db
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: transport24
+      POSTGRES_USER: transport24
+      POSTGRES_PASSWORD: transport24_dev_password
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./database/schema.sql:/docker-entrypoint-initdb.d/01-schema.sql:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U transport24 -d transport24"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  backend:
+    build: ./backend
+    container_name: transport24-api
+    restart: unless-stopped
+    environment:
+      DATABASE_URL: postgresql://transport24:transport24_dev_password@db:5432/transport24
+      JWT_SECRET: change-this-secret-before-production
+      ACCESS_TOKEN_EXPIRE_MINUTES: 480
+    ports:
+      - "8000:8000"
+    depends_on:
+      db:
+        condition: service_healthy
+
+volumes:
+  postgres_data:
