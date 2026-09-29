@@ -17,12 +17,12 @@ names.push("Jean Steven");
 
 console.log(names);
 
-names.pop();
-names.splice(2);
-console.log(names);
+//names.pop();
+//names.splice(2);
+//console.log(names);
 
-names.forEach(function()) {
-  
+names.forEach(function(nameIterar, index)) {
+  console.log(`The array's name is ${nameIterar} who's in the seat ${index + 1}`);  
 });
 
 
