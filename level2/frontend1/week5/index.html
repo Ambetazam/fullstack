@@ -1,0 +1,17 @@
+<!-- HTML Structure -->
+<p id="text-to-change">Click the button below to update me.</p>
+<button id="magic-button">Change Me</button>
+
+<script>
+  // 1. Get the elements
+  const text = document.getElementById("text-to-change");
+  const button = document.getElementById("magic-button");
+
+  // 2. Attach the click event
+  button.addEventListener("click", () => {
+      // 3. Modify text and change styles inside the event
+      text.textContent = "The text and style have changed!";
+      text.style.color = "coral";
+      text.style.fontWeight = "bold";
+  });
+</script>
